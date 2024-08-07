@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gravador de Som</title>
+</head>
+<body>
+<h1>Gravador de Som</h1>
+<button id="startButton">Iniciar Gravação</button>
+<button id="stopButton" disabled>Parar Gravação</button>
+<p id="recordingStatus"></p>
+<audio id="audioElement" controls></audio>
+
+<script>
+// Variáveis globais
+let mediaRecorder;
+let recordedChunks = [];
+
+// Verifica a compatibilidade com a API de Gravação de Mídia
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    console.log('getUserMedia suportado.');
+
+    // Configuração dos botões e funcionalidades
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    const recordingStatus = document.getElementById('recordingStatus');
+    const audioElement = document.getElementById('audioElement');
+
+    startButton.addEventListener('click', async () => {
+        try {
+            // Obter acesso ao microfone
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            handleSuccess(stream);
+        } catch (e) {
+            console.error('navigator.getUserMedia error:', e);
+        }
+    });
+
+    stopButton.addEventListener('click', () => {
+        mediaRecorder.stop();
+        console.log('Gravação parada.');
+        recordingStatus.textContent = 'Gravação parada.';
+        startButton.disabled = false;
+        stopButton.disabled = true;
+    });
+
+    function handleSuccess(stream) {
+        // Cria um MediaRecorder com o stream de áudio
+        mediaRecorder = new MediaRecorder(stream);
+
+        // Evento quando os dados estão disponíveis
+        mediaRecorder.ondataavailable = handleDataAvailable;
+
+        // Evento quando a gravação é parada
+        mediaRecorder.onstop = handleStop;
+
+        // Iniciar a gravação
+        mediaRecorder.start();
+        console.log('Gravando...');
+        recordingStatus.textContent = 'Gravando...';
+        startButton.disabled = true;
+        stopButton.disabled = false;
+    }
+
+    function handleDataAvailable(event) {
+        if (event.data.size > 0) {
+            recordedChunks.push(event.data);
+        }
+    }
+
+    async function handleStop(event) {
+        const blob = new Blob(recordedChunks, { type: 'audio/wav' });
+        recordedChunks = [];
+
+        // Mostrar o áudio gravado
+        const audioURL = URL.createObjectURL(blob);
+        audioElement.src = audioURL;
+        audioElement.controls = true;
+
+        // Opções para download
+        const downloadLink = document.createElement('a');
+        downloadLink.href = audioURL;
+        downloadLink.download = 'recording.wav';
+        downloadLink.innerHTML = 'Baixar gravação';
+        document.body.appendChild(downloadLink);
+
+        console.log('Gravação completada:', blob);
+    }
+} else {
+    console.error('getUserMedia não é suportado no seu navegador.');
+}
+
+</script>
+</body>
+</html>

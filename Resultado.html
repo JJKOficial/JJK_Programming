@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado do Programa</title>
+</head>
+<body id="resultado">
+  <script>
+    function getqueryParam(nome) {
+      var URLParams = newURLSearchParams(window.location.search);
+      return URLParams.get(nome)
+    }
+    codigo = getqueryParam("codigo");
+    document.getElementById("resultado").innerHTML = codigo;
+  </script>
+
+<!--
+### Explicação do Código:
+
+1. **index.html**:
+   - Um botão é adicionado que, quando clicado, abre uma nova janela (`window.open`) com a página `resultado.html`.
+   - Após um segundo, um objeto `dados` é enviado para a nova janela usando `postMessage`. Neste exemplo, estamos enviando um objeto simples com uma mensagem.
+
+2. **resultado.html**:
+   - Esta página contém um `eventListener` que escuta mensagens enviadas via `postMessage`.
+   - Quando uma mensagem é recebida, verifica-se a origem da mensagem para garantir que seja segura.
+   - O conteúdo da mensagem é então exibido na página dentro do elemento `<p>`.
+
+### Notas de Segurança:
+- **Origem da Mensagem**: A verificação `event.origin !== window.location.origin` é importante para garantir que a mensagem seja originada do mesmo domínio, protegendo contra ataques de cross-site scripting (XSS).
+
+Este exemplo é bastante básico e pode ser expandido conforme necessário, dependendo da complexidade do que você precisa enviar e exibir entre as páginas.-->
+</body>
+</html>

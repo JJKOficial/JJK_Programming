@@ -1,0 +1,78 @@
+<!DOCTYPhtml>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <title>https:JJK_Programming/CalculadoraInformatica</title>
+    <link rel="stylesheet" href="Style.css">
+  </head>
+  <body>
+    <header>
+      <titulo class="titulo"><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo>
+      <hr>
+      <nav>
+        <button class="bu" style="height:20px;border:none;">
+          Página Principal</button><button style="height:20px" class="ba" onclick="window.location.href ='teste_de_entrada(versao_actualizada).html';">Cadastrar-se|Entrar</button>
+      </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 class="h">Calculadora de resto de divisão</h3>
+    <button onclick="Calcular()" style="width:80%;height:200px;border-radius:5px;" required="" type="radio">Calcular</button>
+    <br>
+
+    <h4>Os Resultados aparecerão abaixo</h4>
+    <section style="margin:auto;"class="section">
+      <l id="g">
+      </l>
+    </section>
+    <hr>
+    <button class="bu" style="width:100%;border-radius:0px;" onclick="Javascript:history.go(-1)">Página anterior</button>
+    <script>
+      function Calcular() {
+        var j = Number(prompt("    Digite o primeiro valor"));
+        var k = Number(prompt("    Digite o segundo valor"));
+        var x = j%k;
+        document.getElementById("g").innerHTML = "O resto da divisão entre "+j+" e "+k+" é :"+x;
+      }
+
+      function ba() {
+        alert("Indisponível no momento")
+      }
+      function f() {
+        alert("Para entrares em Contacto connosco basta enviares uma mensagens a um dos nossos canais referidos na secção de sites na pagina principal")
+      }
+    </script>
+    <footer>
+      <br>
+      <br>
+      <section>
+        <ul>
+          <li>
+            <f onclick="f()">Contacto</f>
+          </li>
+          <br>
+          <li>
+            <a class="link">Termos de utilização</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Objectivos do Site</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Política de privacidade</a>
+          </li>
+        </ul>
+      </section>
+    </p>
+    <br>
+    &copy; 2024 JJK_Programming.com <br>
+    Versão 2.1
+  </footer>
+</body>
+</html>

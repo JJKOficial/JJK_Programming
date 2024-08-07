@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executar Código HTML</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="black">
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    textarea {
+      width: 96%;
+      height: 200px;
+      font-family: 'Courier New', Courier, monospace;
+      margin: auto;
+      background-color: black;
+      color: white;
+    }
+    .output-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background-color: #f9f9f9;
+      width: 95%;
+      height: reguler;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <titulo class="titulo"><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo>
+    <hr>
+    <nav>
+      <button class="bu" style="height:20px;border:none" onclick="window.location.href ='paginaprincipal.html';">
+        Página Principal</button><button style="height:20px;border:none" class="ba" onclick="window.location.href ='teste_de_entrada(versao_actualizada).html';">Cadastrar-se|Entrar</button>
+    </nav>
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p style="text-align:justify;">
+    Espaço de execução de código na linguagem HTML do JJK_Programming
+  </p>
+  <textarea id="HTML" placeholder="Insira seu código HTML aqui"></textarea>
+  <button onclick="executarHTML()"style="width:40%">Executar</button>
+  <button onclick="javascript:document.location.href='Executar.html'"style="width:40%">Novo código</button>
+  <br>
+  <p>
+    Os resultados aparecerão abaixo.
+  </p>
+  <div class="output-container" id="outputContainer">
+    <!-- Aqui será inserido o código HTML executado -->
+  </div>
+
+  <script>
+    function executarHTML() {
+      codigo = document.getElementById("HTML");
+      window.location.href = "Resultado.html?codigo="+ encodeURIComponent(codigo);
+    }
+  </script>
+  <footer>
+    <br>
+    <br>
+    <section>
+      <ul>
+        <li>
+          <f onclick="f()">Contacto</f>
+        </li>
+        <br>
+        <li>
+          <a target="_blank" class="link">Termos de utilização</a>
+        </li>
+        <br>
+        <li>
+          <a target="_blank" class="link">Objectivos do Site</a>
+        </li>
+        <br>
+        <li>
+          <a target="_blank" class="link">Política de privacidade</a>
+        </li>
+      </ul>
+    </section>
+  </p>
+  <br>
+  &copy; 2024 JJK_Programming.com <br>
+  Versão 2.1
+</footer>
+</body>
+</html>

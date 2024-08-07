@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="black">
+  <link rel="stylesheet" href="Style.css">
+  <title>Conversor Hexadecimal</title>
+  <script>
+    function converter() {
+      // Obter o valor hexadecimal do input
+      var hexInput = document.getElementById("hexInput").value.trim();
+
+      // Validar se o valor é um número hexadecimal válido
+      if (!/^[0-9A-Fa-f]+$/.test(hexInput)) {
+        alert("Por favor, insira um valor hexadecimal válido.");
+        return;
+      }
+
+      var decimal = parseInt(hexInput, 16);
+      var binary = decimal.toString(2);
+      var octal = decimal.toString(8);
+      var hexadecimal = hexInput;
+      document.getElementById("decimal").innerHTML = "Decimal: " + decimal;
+      document.getElementById("binario").innerHTML = "Binario: " + binary;
+      document.getElementById("octal").innerHTML = "Octal: " + octal;
+      document.getElementById("hexadecimal").innerHTML = "Hexadecimal: " + hexadecimal;
+    }
+  </script>
+</head>
+<body>
+  <style>
+    #hexInput{
+      width:80%
+      }
+  </style>
+  <header>
+    <titulo class="titulo"><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo>
+    <hr>
+    <nav>
+      <button class="bu" style="height:20px;border:none">
+        Página Principal</button><button style="height:20px" class="ba" onclick="window.location.href ='teste_de_entrada(versao_actualizada).html';">Cadastrar-se|Entrar</button>
+    </nav>
+  </header>
+  <br>
+  <br>
+  <br>
+  <h2>Conversor Hexadecimal para Decimal, Binário e Octal</h2>
+  <input type="text" id="hexInput" placeholder="Digite o valor a converter">
+  <br>
+  <br>
+  <button onclick="converter()">Converter</button>
+  <br>
+  <br>
+  <h3>Os resultados aparecerão abaixo:</h3>
+  <section class="section" style="margin:auto;text-align:left;">
+    <j id="a" onclick="clickar(">
+      <p id="decimal"></p>
+      <p id="binario"></p>
+      <p id="octal"></p>
+      <p id="hexadecimal"></p>
+    </j>
+  </section>
+  <br>
+  <br>
+  <footer>
+    <button class="bu" style="width:100%;border-radius:0px;" onclick="Javascript:history.go(-1)">Página anterior</button>
+    <br>
+    <br>
+    <section>
+      <ul>
+        <li>
+          <f onclick="f()">Contacto</f>
+        </li>
+        <br>
+        <li>
+          <a class="link">Termos de utilização</a>
+        </li>
+        <br>
+        <li>
+          <a class="link">Objectivos do Site</a>
+        </li>
+        <br>
+        <li>
+          <a class="link">Política de privacidade</a>
+        </li>
+      </ul>
+    </section>
+  </p>
+  <br>
+  &copy; 2024 JJK_Programming.com <br>
+  Versão 2.1
+</footer>
+</body>
+</html>

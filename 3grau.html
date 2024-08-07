@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resolução de Equações do 3º Grau</title>
+      <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <title>https:JJK_Programming/CalculadoraInformatica</title>
+    <link rel="stylesheet" href="Style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result {
+      margin-top: 10px;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Resolução de Equações do 3º Grau</h1>
+    <p>
+      Insira os valores para resolver a equação do tipo ax^3 + bx^2 + cx + d = 0.
+    </p>
+    <form id="cubicEquationForm">
+      <input type="number" id="inputA" placeholder="Valor de a" required>
+      <input type="number" id="inputB" placeholder="Valor de b" required>
+      <input type="number" id="inputC" placeholder="Valor de c" required>
+      <input type="number" id="inputD" placeholder="Valor de d" required>
+      <button type="submit">Resolver</button>
+    </form>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    document.getElementById('cubicEquationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Obter os valores de a, b, c e d do formulário
+      let a = parseFloat(document.getElementById('inputA').value);
+      let b = parseFloat(document.getElementById('inputB').value);
+      let c = parseFloat(document.getElementById('inputC').value);
+      let d = parseFloat(document.getElementById('inputD').value);
+
+      // Verificar se os valores de a, b, c e d são válidos
+      if (isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)) {
+        document.getElementById('result').innerHTML = '<p>Preencha corretamente os valores de a, b, c e d.</p>';
+      } else {
+        // Resolver a equação cúbica utilizando o método de Newton-Raphson
+        let roots = solveCubicEquation(a, b, c, d);
+
+        // Exibir o resultado
+        if (roots.length === 3) {
+          document.getElementById('result').innerHTML = '<p>As raízes da equação são:</p>' +
+          '<p>x<sub>1</sub> = ' + roots[0].toFixed(2) + '</p>' +
+          '<p>x<sub>2</sub> = ' + roots[1].toFixed(2) + '</p>' +
+          '<p>x<sub>3</sub> = ' + roots[2].toFixed(2) + '</p>';
+        } else {
+          document.getElementById('result').innerHTML = '<p>A equação não pôde ser resolvida utilizando este método.</p>';
+        }
+      }
+    });
+
+    function solveCubicEquation(a, b, c, d) {
+      // Método de Newton-Raphson para resolver a equação cúbica ax^3 + bx^2 + cx + d = 0
+      // Supõe-se que haja três raízes distintas
+
+      let roots = [];
+
+      // Chute inicial para as raízes
+      let x1 = 0;
+      let x2 = 0;
+      let x3 = 0;
+
+      // Tolerância para a convergência
+      let tolerance = 1e-6;
+
+      // Número máximo de iterações
+      let maxIterations = 100;
+
+      // Iteração do método de Newton-Raphson
+      for (let i = 0; i < maxIterations; i++) {
+        // Calcular o valor do polinômio e sua derivada
+        let fx = a * x1**3 + b * x1**2 + c * x1 + d;
+        let fpx = 3 * a * x1**2 + 2 * b * x1 + c;
+
+        // Atualizar o valor de x utilizando o método de Newton-Raphson
+        let newX = x1 - fx / fpx;
+
+        // Verificar a convergência
+        if (Math.abs(newX - x1) < tolerance) {
+          roots.push(newX);
+          break;
+        }
+
+        x1 = newX;
+      }
+
+      // Encontrar as outras duas raízes utilizando divisão sintética
+      let quadraticCoefficients = [a,
+        b,
+        c,
+        d];
+      quadraticCoefficients = divideSynthetic(quadraticCoefficients, roots[0]);
+
+      let quadraticRoots = solveQuadraticEquation(quadraticCoefficients[0], quadraticCoefficients[1], quadraticCoefficients[2]);
+
+      roots = roots.concat(quadraticRoots);
+
+      // Ordenar as raízes
+      roots.sort((a, b) => a - b);
+
+      return roots;
+    }
+
+    function divideSynthetic(coefficients, root) {
+      // Divisão sintética para dividir o polinômio por (x - root)
+      let result = [];
+      result.push(coefficients[0]);
+
+      for (let i = 1; i < coefficients.length; i++) {
+        result.push(result[i - 1] * root + coefficients[i]);
+      }
+
+      return result.slice(0, -1);
+    }
+
+    function solveQuadraticEquation(a, b, c) {
+      // Resolver uma equação quadrática do tipo ax^2 + bx + c = 0
+      let discriminant = b * b - 4 * a * c;
+
+      if (discriminant > 0) {
+        let x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        let x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        return [x1,
+          x2];
+      } else if (discriminant === 0) {
+        let x = -b / (2 * a);
+        return [x];
+      } else {
+        // Raízes complexas
+        return [];
+      }
+    }
+  </script>
+
+</body>
+</html>

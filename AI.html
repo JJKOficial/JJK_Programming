@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="black">
+  <title>Meu Site</title>
+  <link rel="stylesheet" href="Style.css">
+
+</head>
+<body class="body">
+  <header style="texte-align:center;">
+    <titulo class="titulo"><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo>
+    <hr>
+    <nav>
+      <button class="bu" style="height:20px;border:none;width:30%;" onclick="window.location.href ='paginaprincipal.html';">Pagina Principal</button><button style="height:10px;width:30%;" class="ba" onclick="window.location.href ='Executor.html';">JJK VS Code</button><button style="height:20px;width:30%;" class="ba" onclick="window.location.href ='teste_de_entrada(versao_actualizada).html';">Cadastrar-se|Entrar</button>
+    </nav>
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p class="caixaM3" style="margin;nane">
+    Olá! bem vindo ou <titulo class="titulo"><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo>, eu sou o <titulo class="titulo"><j>J</j><k>.</k><underline>A</underline>I</titulo>
+  </p>
+  <p class="caixaM3" style="margin;nane">
+    Por vezes, não aceito questão com erros de escrita ou questões fora do programa, por favor, faça uma questão de cada vez.
+  </p>
+  <p id="corpo">
+  </p>
+  <br>
+  <br>
+  <footer class="footer">
+    <input style="boder:nane" placeholder="Escreva sua pergunta aqui." class="pergunta" id="valor">
+    <button class="AI" style="boder:nane" onclick="analizar()">Enviar</button>
+  </footer>
+  <script>
+    function analizar() {
+      var per = document.getElementById("valor").value;
+      var p = per.toLowerCase();
+      var novodiv = document.createElement("p");
+      novodiv.type = "text";
+      novodiv.innerHTML = p;
+      novodiv.classList.add("caixaM1");
+      var chatContainer = document.getElementById("corpo");
+      chatContainer.appendChild(novodiv);
+      var re = document.createElement("p");
+      re.type = "text";
+      re.classList.add("caixaM2");
+      chatContainer.appendChild(re);
+      if (p.includes("bom dia") || p.includes("boa tarde") || p.includes("ola") || p.includes("olá") || p.includes("oi")) {
+        re.innerHTML = "Olá! em que posso ajudar?";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("como estas") || p.includes("como estás") || p.includes("como vais") || p.includes("como vai") || p.includes("como te sentes") || p.includes("tens estado") || p.includes("estas bem") || p.includes("estás bem") || p.includes("é como") || p.includes("e como")) {
+        re.innerHTML = "Bem, e você?";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("tens") || p.includes("teus") || p.includes("teu") || p.includes("seu") || p.includes("seus") && p.includes("sentimento") || p.includes("sentimentos")) {
+        re.innerHTML = "Sou uma Inteligência Artificial po isso não tenho sentimentos, fui criado simplesmente para ajudar os usuarios do JJK_Programming.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("esta bem") || p.includes("está bem") || p.includes("ok")) {
+        re.innerHTML = "Ok, estarei aqui para ajudar.";
+        document.getElementById("valor").value = "";
+      } else if ((p.includes("qual") || p.includes("que")) && p.includes("linguagem") && (p.includes("te") || p.includes("foste")) && (p.includes("progamado") || p.includes("criado") || p.includes("criou") || p.includes("criaram") || p.includes("programadoram") || p.includes("escreveram") || p.includes("escreveu") || p.includes("escrito") || p.includes("escrita"))) {
+        re.innerHTML = "Fui escrito em JS, ou seja sou a primeira inteligência artificial escrita em Javascript(JS) na parte logica e HTML + CSS no grafico.";
+        document.getElementById("valor").value = "";
+      } else if (((p.includes("o") || p.includes("os") || p.includes("tens")) || (p.includes("teus") || p.includes("seus") || p.includes("seu") || p.includes("teu"))) && ((p.includes("erros") || p.includes("erro")))) {
+        re.innerHTML = "Sendo eu uma linguagem artificial limimitada do JJK_Programming, eu posso posssuir erros, para solucionar basta inviares um SMS/mensagem para as redes sociais do JJK_Programming ja sitados no pagina principal na seccão 'siga-nos', mas recomendadamente do Facebook.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("estou bem") || p.includes("estas bem") || p.includes("vou bem") || p.includes("também") || p.includes("tambem") || p.includes("feliz") || p.includes("bem disposto") || p.includes("alegre") || p.includes("animado") || p.includes("com energia") || p.includes("energetico") || p.includes("energético") || p.includes("muito bem")) {
+        re.innerHTML = "Bom saber, se quiseres saber algo sobre o site basta perguntar.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("estou mal") || p.includes("estas mal") || p.includes("vou mal") || p.includes("mal disposto") || p.includes("normal") || p.includes("indo aos poucos") || p.includes("pessimo") || p.includes("péssimo") || p.includes("mais ou menos") || p.includes("+ ou -") || p.includes("doente") || p.includes("dolorido") || p.includes("partido") || p.includes("cansado") || p.includes("com dor") || p.includes("infeliz") || p.includes("não estou") || p.includes("aborecido") || p.includes("desanimado")) {
+        re.innerHTML = "Espero que melhore, se quiseres saber algo sobre o site basta perguntar.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("obrigado") || p.includes("obrigada") || p.includes("agradeço") || p.includes("estou grato") || p.includes("estou grata") || p.includes("agradeco")) {
+        re.innerHTML = "De nada, estarei aqui para ajudar no que precisares.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("teu nome") || p.includes(" seu nome") || p.includes("te chamar") || p.includes("quem é você") || p.includes("quem es tu") || p.includes("de onde es") || p.includes("tu es") || p.includes("te chamas") || p.includes("quem e você") || p.includes("você é quem")) {
+        re.innerHTML = "Meu nome é <titulo class='titulo'><j>J</j><k>.</k><underline>A</underline>I</titulo>, abreviatura de <titulo class='titulo'><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo><titulo class='titulo'><k>.</k><underline>A</underline>I</titulo> ( a Inteligência Artificial limitada do site).";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("teu criador") || p.includes("seu criador") || p.includes("seus criadores") || p.includes("te criou") || p.includes("teus criadores") || p.includes("lhe criou")) {
+        re.innerHTML = "Fui criado pelo programmador JJK, o mesmo que criou e fundou o JJK_Programming.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("quando te criaram") || p.includes("quando te criou") || p.includes("quando foste criado") || p.includes("que te criaram") || p.includes("é que te criou") || p.includes("foste criado")) {
+        re.innerHTML = "Fui criado no ano de 2024 num dispositivo movel ";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("jjkprogramming") || p.includes("jjk_programming") || p.includes("objectivos") || p.includes("objetivos") || p.includes("objectivo") || p.includes("objetivo") || p.includes("serve o")) {
+        re.innerHTML = "O JJK_Programming ('JJK programando' ou também 'programando com JJK') é um sistema criado para oferecer suporte e recursos para informáticos que desejam aprender e aprimorar suas habilidades e não só.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("simbolo") || p.includes("a marca") || p.includes("repesentado") || p.includes("favicon") || p.includes("representada") || p.includes("infinito") || p.includes("logotipo") || p.includes("logo")) {
+        re.innerHTML = "A simbolo, marca ou logotipo do JJK_Programming é o infinito, pois este representa o conhecimento (como se diz, 'O conhecimento e ilimitado ou infinito, iso e, todos os dias aprendemos e ninguem sabe tudo').";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("cores") || p.includes("cor") || p.includes("tema")) {
+        re.innerHTML = "A site do JJK_Programming tem estas cores, pois são cores menos utilizados nos sites representa o conhecimento (como o simbolo infinito são varios, mas com esta cor, so o JJKProgramming possui, a não ser que copiem), e com este tema predefinido, para melhor aparencia do site.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("anexos") || p.includes("anexo")) {
+        re.innerHTML = "O anexo do JJK_Programming possui a politica de privacidade, condições de uso e objectivos do site.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("vs") || p.includes("code")) {
+        re.innerHTML = "O JJK VS Code possui um terminal onde podes executar programas em HTML.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("onde estas") || p.includes("onde estás") || p.includes("aonde estás") || p.includes("aonde estas") || p.includes("aonde te situas")) {
+        re.innerHTML = "Como uma Inteligência Artificial limitada, me localizo no servidor onde o site se hospeda.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("aplicativo") || p.includes("apps") || p.includes("app") || p.includes("aplicativos")) {
+        re.innerHTML = "Os aplicativos do JJK_Programming ainda não estão disponiveis, pois estão em desenvolvimento.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("página principal") || p.includes("pagina principal") || p.includes("página inicial") || p.includes("pagina inicial") || p.includes("aulas") || p.includes("sistema") || p.includes("secções") || p.includes("seccão")) {
+        re.innerHTML = "A pagina principal do JJK_Programming onde você vai encontrar varias secções como: os sistemas do JJK_Programming, isto e, sistemas exclusivos e disponibilizado pelo JJK_Programming (vais encontrar o sistema de conversão, calculadora de equação, resto da divisão...), as aulas disponiveis no youTube recomendadas no JJK_Programming (aulas de HTML e CSS, Javascript(JS) e PHP) e os canais e grupos do site na seccão siga-nos.";
+        document.getElementById("valor").value = "";
+      } else if (p.includes("cadastrar se") || p.includes("entrar") || p.includes("cadastro") || p.includes("cadastrar") || p.includes("criar conta") || p.includes("iniciar se")) {
+        re.innerHTML = "Para o cadastro (criar conta) e iniciar secção basta, clicar no botão 'cadastrar-se|Entrar' na barra de tarefas e seguir as instruções das.";
+        document.getElementById("valor").value = "";
+      } else
+      {
+        re.innerHTML = "Não tenho a capacidade de responder a esta questão ou reformule sua questão.";
+        document.getElementById("valor").value = "";
+      }
+    }
+  </script>
+</body>
+</html>

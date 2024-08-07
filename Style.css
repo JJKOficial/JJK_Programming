@@ -1,0 +1,302 @@
+  @Charset "UTF-8";
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Times New Roman;
+    text-align: center;
+    background-color: #d9d9e4;
+    }
+    header {
+    background-image: url('imagens/Form2.png');
+    color: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    position: fixed;
+    font-family: Times New Roman;
+    height:70px;
+    }
+    .container {
+    width: 90%;
+    padding: 20px;
+    font-family: Sans-Serif;
+    text-align:center;
+    }
+    .section {
+    background-image: url('imagens/Form2.png');
+    color: #fff;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+    font-family: Sans-Serif;
+    }
+    section {
+      color: #fff;
+      padding: 20px;
+      width: 80%;
+      border-radius: 10px;
+      font-family: Sans-Serif;
+    }
+    video{
+    width:60%;
+    border-radius:5px;
+    }
+    .forma {
+    background-color:#dce2eca4;
+    padding: 20px;
+    margin-right:10px;
+    width:30%;
+    border: solid ;
+    border-radius: 10px;
+    border-color:#060728;
+    font-family:Times New Roman;
+   
+    }
+    .form{background-color: #a2a2c5;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 10px;
+    font-family:Times New Roman;
+    width:70%;
+    }
+    footer {
+    background-image: url('imagens/Form.png');
+        color: #fff;
+    text-align: center;
+    width: 100%;
+    font-family:Sans-Serif;
+    }
+    .p {
+    background-image: url('imagens/Form2.png');
+        width: 100%;
+    line-height: 20px;
+    font-family:Times New Roman;
+    }
+    img {
+    color: #fff;
+    text-align: center;
+    width: 100%
+    }
+    h3 {
+    color: black;
+    text-align: center;
+    font-family: Times New Roman;
+    }
+    
+    .conteudo {
+    text-align: justify;
+    font-family: Times New Roman;
+    color: black;
+    }
+    .h {
+    color: black;
+    font-family: Times New Roman;
+    text-shadow:1px 1px 0px #383838;
+    }
+    .bu {
+    width: 49%;
+    height: 40px;
+    color: white;
+    background-image: url('imagens/Form2.png');
+    margin: auto;
+    font-family: Times New Roman, ;
+    border:none
+    border-radius:none;
+    }
+    .ba {
+    width: 49%;
+    height: 40px;
+    color: white;
+    background-image: url('imagens/Form2.png');
+        margin: auto;
+    font-family: Times New Roman;
+    border:none;
+    border-radius:none;
+    }
+    for{margin:none;
+    border: none;
+
+    }
+    button {
+    width: 70%;
+    height: 40px;
+    color: white;
+    background-image: url('imagens/Form2.png');
+    margin: auto;
+    border-radius:5px;
+    text-align: center;
+    font-family: Times New Roman;
+    }
+    .tecla {
+    width: 32%;
+    height: 40px;
+    color: white;
+    background-image: url('imagens/Form2.png');
+    margin: auto;
+    border-image:white;
+    text-align: center;
+    font-family: Times New Roman;
+    border-radius:none;
+    }
+    .sis {
+    display:flex;
+    justify-content:left;
+    align-items: flex-end;
+    width: 100%;
+    border-radius: 10px;
+    font-family: Times New Roman;
+    text-align: center;
+    margin-left:20px;
+    margin-top:20px;
+    }
+    ul {
+    text-align: left;
+    list-style: none;
+    font-family: Times New Roman;
+    }
+    .link {
+    text-decoration: none;
+    color:white;
+    font-family: Times New Roman;
+    }
+    .a {
+   
+    text-decoration:none;
+    font-family: Times New Roman;
+    }
+    .a:hover{color:darkred;
+      text-decoration:blink;
+    }
+    t{text-align:justify;}
+    video{width:100%;}
+    .ab{width:80px;
+    height: 50px;
+    color: white;
+    background-image: url('imagens/Form2.png');
+    margin: auto;
+    border-radius:5px;
+    text-align: center;
+    font-family: Times New Roman;
+      text-decoration: none;
+      border: solid ;
+    }
+   
+    *{background-attachment:fixed;
+      font-family: Times New Roman, Sans-Serif;
+    }
+    .titulo{
+    color:#d46def;
+    text-align:left;
+    }
+    j{
+      color:#723bf7;
+    }
+    k{
+      color:#7521dd;
+    }
+    underline{
+      color:#ac56f6;
+    }
+    div{
+      display:inline-block;
+    }
+    input{
+      border:solid;
+      border-block-color:black;
+      border-radius:5px;
+      width:25% ;
+      height:25px;
+    }
+    strong {
+        font-size: 19px;
+      }
+    hr{
+      background-color:green;
+    }
+    /* .box{
+      border:solid ;
+      border-block-color:#723bf7;
+      box-shadow:2px 2px 2px #7521dd;
+      background-color:#c9a9f0;
+      width:90%;
+      height:40px ;
+      border-radius:5px;
+    }
+    */
+    span{
+      font-size:30px;
+     
+    }
+    .caixaM1{
+      width:50%;
+      margin-left:45%;
+      padding:5px;
+      background-color: #e0b4f8;
+      border-radius:5px;
+      margin-bottom:10px;
+      margin-right:40px;
+      text-align:left;
+    }
+        .caixaM2{
+      width:50%;
+      margin-left:10px;
+      padding:5px;
+      background-color:white;
+      border-radius:5px;
+      margin-bottom:10px;
+      text-align:left;
+      }
+        .caixaM3{
+      width:70%;
+      padding:5px;
+      margin-left:10px;
+      background-color: white;
+      border-radius:5px;
+       text-align:left;
+      margin-bottom:10px;
+    }
+    .AI{
+      width:20%;
+      height:52px;
+    }
+        .pergunta{
+      width:75%;
+      padding-bottom:0px;
+      padding-top:0px;
+      padding-left:10px;
+      height:50px;
+      font-size:16px;
+    }
+    .body{
+    }
+    .footer{
+      width:100%;
+     bottom:0%;
+     left:0%;
+     right:0%;
+     height:55px;
+    }
+  .video {
+    position: relative;
+    width:90%;
+    padding-bottom: 56.25%; 
+    overflow: hidden;
+    margin:auto;
+    background-color: #000;
+    margin-bottom: 20px;
+    height:150px;
+  }
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 10px 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }

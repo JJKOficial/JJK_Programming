@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="black">
+  <title>Meu Site</title>
+  <link rel="stylesheet" href="Style.css">
+  <title>Conversor Octal</title>
+  <style>
+    #octal {
+      width:80%
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <titulo class="titulo"><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo>
+      <hr>
+      <nav>
+        <button class="bu" style="border:none;height:10px" onclick="window.location.href ='paginaprincipal.html';">
+          Página Principal</button><button class="ba" style="border:none;height:10px" onclick="window.location.href ='teste_de_entrada(versao_actualizada).html';">Cadastrar-se|Entrar</button>
+      </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <h3>Conversor de Sistemas de Numeração (Conversor decimal)</h3>
+    <input type="text" id="octal" placeholder="Digite um número octal..." autocomplete="off">
+    <br>
+    <br>
+    <button onclick="converter()">Converter</button>
+    <script>
+      function converter() {
+        var valor = document.getElementById('octal').value.trim();
+
+        // Validar se o valor de entrada é um número octal válido
+        if (!verificar(valor)) {
+          alert('Por favor, insira um número octal válido.');
+          return;
+        }
+
+        // Converter para decimal
+        var decimal = parseInt(valor, 8);
+
+        // Converter para hexadecimal
+        var hexadecimal = decimal.toString(16).toUpperCase();
+
+        // Converter para binário
+        var binario = decimal.toString(2);
+        var octal = valor;
+        // Exibir os resultados
+        document.getElementById("decimal").innerHTML = "Decimal: " + decimal;
+        document.getElementById("binario").innerHTML = "Binario: " + binario;
+        document.getElementById("octal").innerHTML = "Octal: " + octal;
+        document.getElementById("hexadecimal").innerHTML = "Hexadecimal: " + hexadecimal;
+      }
+
+      function verificar(valor) {
+        // Verificar se é um número octal válido
+        return /^[0-7]+$/.test(valor);
+      }
+    </script>
+    <br>
+    <h3>Os resultados aparecerão abaixo:</h3>
+    <section class="section" style="margin:auto;text-align:left;">
+      <j id="a" onclick="clickar(">
+        <p id="decimal"></p>
+        <p id="binario"></p>
+        <p id="octal"></p>
+        <p id="hexadecimal"></p>
+      </j>
+
+    </section>
+    <br>
+    <br>
+    <footer>
+      <button class="bu" style="width:100%;border-radius:0px;" onclick="Javascript:history.go(-1)">Página anterior</button>
+      <br>
+      <br>
+      <section>
+        <ul>
+          <li>
+            <f onclick="f()">Contacto</f>
+          </li>
+          <br>
+          <li>
+            <a class="link">Termos de utilização</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Objectivos do Site</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Política de privacidade</a>
+          </li>
+        </ul>
+      </section>
+    </p>
+    <br>
+    &copy; 2024 JJK_Programming.com <br>
+    Versão 2.1
+  </footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor Binário</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="black">
+  <link rel="stylesheet" href="Style.css">
+  <style>
+    #valor {
+      width:80%
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <titulo class="titulo"><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo>
+      <hr>
+      <nav>
+        <button class="bu" style="border:none;height:10px" onclick="window.location.href ='paginaprincipal.html';">
+          Página Principal</button><button class="ba" style="border:none;height:10px" onclick="window.location.href ='teste_de_entrada(versao_actualizada).html';">Cadastrar-se|Entrar</button>
+      </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <h3>Conversor de Sistemas de Numeração (Conversor decimal)</h3>
+    <input type="text" id="valor" placeholder="Digite um número binário..." autocomplete="off">
+        <br>
+    <br>
+    <button onclick="converter()">Converter</button>
+
+    <div id="resultado">
+      <!-- Aqui serão exibidos os resultados -->
+    </div>
+
+    <script>
+      function converter() {
+        var valor = document.getElementById('valor').value.trim();
+
+        // Validar se o valor de entrada é um número binário válido
+        if (!validar(valor)) {
+          alert('Por favor, insira um número binário válido.');
+          return;
+        }
+
+        // Converter para decimal
+        var decimal = parseInt(valor, 2);
+
+        // Converter para hexadecimal
+        var hexadecimal = decimal.toString(16).toUpperCase();
+
+        // Converter para octal
+        var octal = decimal.toString(8);
+        var binario = valor;
+        // Exibir os resultados
+        document.getElementById("decimal").innerHTML = "Decimal: " + decimal;
+        document.getElementById("binario").innerHTML = "Binario: " + binario;
+        document.getElementById("octal").innerHTML = "Octal: " + octal;
+        document.getElementById("hexadecimal").innerHTML = "Hexadecimal: " + hexadecimal;
+      }
+
+      function validar(valor) {
+        // Verificar se é um número binário válido
+        return /^[01]+$/.test(valor);
+      }
+    </script>
+    <br>
+    <h3>Os resultados aparecerão abaixo:</h3>
+    <section class="section" style="margin:auto;text-align:left;">
+      <j id="a" onclick="clickar(">
+        <p id="decimal"></p>
+        <p id="binario"></p>
+        <p id="octal"></p>
+        <p id="hexadecimal"></p>
+      </j>
+
+    </section>
+    <br>
+    <br>
+    <footer>
+      <button class="bu" style="width:100%;border-radius:0px;" onclick="Javascript:history.go(-1)">Página anterior</button>
+      <br>
+      <br>
+      <section>
+        <ul>
+          <li>
+            <f onclick="f()">Contacto</f>
+          </li>
+          <br>
+          <li>
+            <a class="link">Termos de utilização</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Objectivos do Site</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Política de privacidade</a>
+          </li>
+        </ul>
+      </section>
+    </p>
+    <br>
+    &copy; 2024 JJK_Programming.com <br>
+    Versão 2.1
+  </footer>
+</body>
+</html>

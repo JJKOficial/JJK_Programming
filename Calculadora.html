@@ -1,0 +1,95 @@
+<!DOCTYPhtml>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <title>https:JJK_Programming/CalculadoraInformatica</title>
+    <link rel="stylesheet" href="Style.css">
+  </head>
+  <body>
+    <header>
+      <titulo class="titulo"><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo>
+      <hr>
+      <nav>
+        <button class="bu" style="height:20px;border:none">
+          Página Principal</button><button style="height:20px" class="ba" onclick="window.location.href ='teste_de_entrada(versao_actualizada).html';">Cadastrar-se|Entrar</button>
+      </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <h3 class="h">Calculadora de Equação do IIº grau</h3>
+    <br>
+    <section style="text-align:justify;margin:auto;"class="section">
+      <p>
+        Para o "valor de a", recebe a todo valor antes do x ao quadrado, isto é o valor do quociente de x ao quadrado ou x2, caso for simplesmente x2 coloque 1, nunca coloque 0, pois ai deixa de ser equação do IIº grau.<br><br>
+        Para o "valor de b", recebe todo valor antes do x, isto é o valor do quociente de x, caso for simplesmente x coloque 1, se não houver valor com x, como por exemplo: 2x ; 5x ; 7x..., então coloque 0.<br><br>
+        Para o "valor de c", recebe todo valor que não tenha variavel x, isto é a soma dos termos indenpendentes, se não houver valor sem a variavel x, como por exemplo: 2 ; 5 ; 7..., então coloque 0.<br><br>
+        Caso venha "x1=NaN e x2=NaN" então verifique os passos a passos da Equação e considere apenas o passo antes do passo com NaN, isso devido a impossibilidade de existir a raiz quadrado de um número negativo.
+      </p>
+    </section>
+    <br>
+    <br>
+    <button onclick="Calcular()" style="width:80%;border-radius:5px;" required="" type="radio">Calcular</button>
+    <br>
+
+    <h4>Os Resultados aparecerão abaixo</h4>
+    <section style="margin:auto;text-align:left;"class="section">
+      <l id="g" style="text-align:left;">
+      </l>
+    </section>
+    <hr>
+    <button class="bu" style="width:100%;border-radius:0px;" onclick="Javascript:history.go(-1)">Página anterior</button>
+    <script>
+
+      function Calcular() {
+        var a = parseFloat(prompt("valor de a"));
+        var b = parseFloat(prompt("valor de b"));
+        var c = parseFloat(prompt("valor de c"));
+        let a1 = -4*a*c;
+        let a2 = b*b;
+        let a5 = (-b);
+        let d = parseFloat((b*b)-4*a*c);
+        let delta = Math.sqrt(d);
+        let x1 = parseFloat(((-b)+delta)/2*a);
+        let x2 = parseFloat(((-b)-delta)/2*a);
+        document.getElementById("g").innerHTML = "As raizes da Equação  "+a+"x² + "+b+"x + "+c+" = 0, são: x1 = "+x1+" e x2 = "+x2+" <br><br>Passo a passo:<br>x² + "+b+"x + "+c+" = 0 <br>a=1 ; b="+c+" ;c="+c+"<br>x1= (-("+b+") + √("+b+")²-4(1).("+c+"))/2."+a+"<br>x2= (-("+b+") - √("+b+")²-4(1).("+c+"))/2."+a+"<br> x1=("+a5+" + √ "+a2+" +("+a1+") )/2 <br> x2=("+a5+" - √ "+a2+" +("+a1+") )/2 <br> x1=("+a5+" + √ "+d+" )/2 <br> x2=("+a5+" - √ "+d+" )/2 <br>x1=("+a5+" + "+delta+" )/2 <br>x2= ("+a5+" - "+delta+" )/2 <br> x1= "+x1+" <br>x2= "+x2;
+      }
+      function ba() {
+        alert("Indisponível no momento")
+      }
+      function f() {
+        alert("Para entrares em Contacto connosco basta enviares uma mensagens a um dos nossos canais referidos na secção de sites na pagina principal")
+      }
+    </script>
+    <footer>
+      <br>
+      <br>
+      <section>
+        <ul>
+          <li>
+            <f onclick="f()">Contacto</f>
+          </li>
+          <br>
+          <li>
+            <a class="link">Termos de utilização</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Objectivos do Site</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Política de privacidade</a>
+          </li>
+        </ul>
+      </section>
+    </p>
+    <br>
+    &copy; 2024 JJK_Programming.com <br>
+    Versão 2.1
+  </footer>
+</body>
+</html>

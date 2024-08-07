@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <title>https:JJK_Programming/CalculadoraInformatica</title>
+    <link rel="stylesheet" href="Style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result {
+      margin-top: 10px;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Resolução de Equações do 1º Grau</h1>
+    <p>
+      Insira os valores para resolver a equação do tipo ax + b = 0.
+    </p>
+    <form id="linearEquationForm">
+      <input type="number" id="inputA" placeholder="Valor de a (coeficiente de x)" required>
+      <input type="number" id="inputB" placeholder="Valor de b (termo independente)" required>
+      <button type="submit">Resolver</button>
+    </form>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    document.getElementById('linearEquationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Obter os valores de a e b do formulário
+      let a = parseFloat(document.getElementById('inputA').value);
+      let b = parseFloat(document.getElementById('inputB').value);
+
+      // Verificar se os valores de a e b são válidos
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById('result').innerHTML = '<p>Preencha corretamente os valores de a e b.</p>';
+      } else {
+        // Resolver a equação ax + b = 0
+        if (a === 0) {
+          if (b === 0) {
+            document.getElementById('result').innerHTML = '<p>A equação é uma identidade (0 = 0), tem infinitas soluções.</p>';
+          } else {
+            document.getElementById('result').innerHTML = '<p>A equação é impossível (0 ≠ ' + b + '), não tem solução.</p>';
+          }
+        } else {
+          let x = -b / a;
+          document.getElementById('result').innerHTML = '<p>A solução da equação ' + a + 'x + ' + b + ' = 0 é x = ' + x.toFixed(2) + '.</p>';
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
