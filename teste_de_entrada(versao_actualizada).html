@@ -1,0 +1,104 @@
+<!DOCTYPhtml>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <link rel="stylesheet" href="Style.css">
+    <meta name="theme-color" content="#ffffff">
+    <title>Entrar no JJK_Programming</title>
+  </head>
+  <body>
+    <style>
+      form {
+        border-radius: 10px;
+        margin: auto;
+        text-align: center;
+        height: 320px;
+        width: 330px;
+        border-image: 10px;
+        margin: auto;
+        border-color: black;
+        box-shadow: 2px 2px 4px #00002b;
+        margin-bottom: auto;
+        background-color: #a2a2c5;
+      }
+
+      input {
+        height: 35px;
+        text-align: center;
+        width: 250px;
+        border: solid;
+        border-radius: 2px;
+      }
+      button {
+        height: 35px;
+        text-align: center;
+        width: 250px;
+        border-radius: 5px;
+        background-color: #00002b;
+        color: white;
+        border-color: black;
+        border-image: 10px;
+        border: solid;
+      }
+      p {
+        text-align: justify;
+        margin-left: 25px;
+        width: 300px;
+      }
+      h2 {
+        color: gray;
+        text-shadow: 5px 5px 5px 5px darkgray;
+      }
+      input {
+        border-radius: 5px;
+        background-color: #d9d9e4;
+      }
+      h {
+        text-align: justify;
+        margin-left: -140px;
+      }
+      g {
+        background-color: blue;
+      }
+      b
+    </style>
+    <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <form>
+      <br>
+      <strong><titulo style="text-align:center" class="titulo"><j>JJk</j><k>_Pro</k><underline>gram</underline>ming</titulo>
+      </strong>
+      <br>
+      <br> <br>
+      <input placeholder="Numero" type="number" id="numero" required="">
+      <br>
+      <br>
+      <input placeholder="Senha" type="password" id="senha" required="">
+      <br> <br>
+      <button onclick="Entrar()" required="">Entrar</button>
+      <br>
+      <campos id="campos" class="campos">
+
+      </campos>
+      <br>
+      <a href="esquecer.html">Esqueci da palavra passe</a>
+      <br>    <br>
+      <a href="criar.html">Criar conta</a>
+    </form>
+    <script>
+      function Entrar() {
+        var numero = Number(document.getElementById("numero")).value;
+        var senha = Number(document.getElementById("senha")).value;
+        if ((numero+=senha) == 927075935) {
+          window.alert("correto")
+        } else {
+          window.alert("errado")
+        }
+      }
+    </script>
+  </body>
+</html>
