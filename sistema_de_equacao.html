@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resolução de Equações do 3º Grau</title>
+      <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <title>JJK_Programming/CalculadoraInformatica</title>
+    <link rel="stylesheet" href="Style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      margin-top:15px ;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result {
+      margin-top: 10px;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Resolução de Sistemas de Equações</h1>
+      <p>
+        1 equação
+      </p>
+      <input type="number" id="a1" placeholder="Valor do coeficiente de x (a)" required>
+      <input type="number" id="b1" placeholder="Valor do coeficiente de y (b)" required>
+      <input type="number" id="c1" placeholder="Valor do termo indendente (c)" required>
+     <p>
+        2 equação
+      </p>
+      <input type="number" id="a2" placeholder="Valor do coeficiente de x (a)" required>
+      <input type="number" id="b2" placeholder="Valor do coeficiente de y (b)" required>
+      <input type="number" id="c2" placeholder="Valor do termo indendente (c)" required>
+    <br>
+      <button onclick="calcular()">Resolver</button>
+      <br>
+      <p class="result" id="res"></p>
+  </div>
+  <script>
+function calcular() {
+  // Captura os valores dos inputs
+  var a1 = Number(document.getElementById("a1").value);
+  var b1 = Number(document.getElementById("b1").value);
+  var c1 = Number(document.getElementById("c1").value);
+  var a2 = Number(document.getElementById("a2").value);
+  var b2 = Number(document.getElementById("b2").value);
+  var c2 = Number(document.getElementById("c2").value);
+  
+  // Calcula o determinante
+  var det = a1 * b2 - a2 * b1;
+  
+  // Verifica se o determinante é zero
+  if (det === 0) {
+    document.getElementById("res").innerHTML = "O sistema não tem uma solução única ou tem infinitas soluções.";
+    return;
+  }
+  
+  // Calcula os valores de x e y usando o método de Cramer
+  var x = (c1 * b2 - c2 * b1) / det;
+  var y = (a1 * c2 - a2 * c1) / det;
+  
+  // Exibe os resultados
+  document.getElementById("res").innerHTML = document.write( "O valor de x = " + x.toFixed(2) + " e y = " + y.toFixed(2));
+}
+  </script>
+  </body>
+</html>
