@@ -21,11 +21,9 @@
     </nav>
   </header>
   <br>
-  <br> 
+  <br> <br>
   <br>
-  <br>
-  <!--
-  <div id="horas" class="box">
+<!--  <div id="horas" class="box">
     <div class="clock">
       <span id="hrs">00</span>
       <span>:</span>
@@ -34,19 +32,18 @@
       <span id="sec">00</span>
     </div>
   </div>
--->
+  -->
   <div class="video">
     <video id="myVideo" autoplay muted loop>
-      <source src="bv.mp4" type="video/mp4">
+      <source src="imagens/bv.mp4" type="video/mp4">
       Seu navegador não suporta vídeo HTML5.
     </video>
     <div class="close-button" onclick="fecharVideo()">
       fechar
     </div>
   </div>
-  
   <nav class="container">
-    <h2>Sistemas do JJK_Programming</h2>
+    <h3>Sistemas do JJK_Programming</h3>
     <nav class="sis">
       <article class="forma" target="_blank ">
         <h3 class="h">Sistema de conversão de numeração</h3>
@@ -61,24 +58,40 @@
           Ao clicar aqui, você vai para o nosso sistema que calcula o resto da divisão, inserindo apenas o valor.
         </p>
         <button onclick="window.location.href ='Resto.html';" type="submit">Entrar</button>
-      </article>      <article class="forma" target="_blank ">
+      </article>
+      <article class="forma" target="_blank ">
         <h3 class="h">Calculadora de equações do IIº grau</h3><p class="conteudo">
           Ao clicar aqui, você vai para o nossa Calculadora de equações do IIº grau, onde podes resolver as equações achando as suas raizes (x1,x2).
         </p>
         <button onclick="window.location.href ='Calculadora.html';" type="submit">Entrar</button>
       </article>
-      <br>
     </nav>
+    <br>
     <nav class="sis">
-            <article class="forma" target="_blank ">
+      <article class="forma" target="_blank ">
         <h3 class="h">Calculadora de equações do Iº grau</h3><p class="conteudo">
-          Ao clicar aqui, você vai para o nossa Calculadora de equações do Iº grau, onde podes resolver as equações achando a sua raiz x.
+          Ao clicar aqui, você vai para o nossa Calculadora de equações do Iº grau, onde podes resolver as equações achando as sua raiz x.
         </p>
-        <button onclick="window.location.href ='Igrau.html';" type="submit">Entrar</button>
+        <button onclick="javascript:location.href='Igrau.html'" type="submit">Entrar</button>
+      </article>
+      <br>
+      <article class="forma" target="_blank ">
+        <h3 class="h">Calculadora de sistema de equações do Iº grau</h3><p class="conteudo">
+          Ao clicar aqui, você vai para o nossa Calculadora sistemas de equações do Iº grau, onde podes resolver as equações achando as suas raizes (x,y).
+        </p>
+        <button onclick="javascript:location.href='sistema_de_equacao.html'"type="submit">Entrar</button>
+      </article>
+      <br>
+      <article class="forma" target="_blank ">
+        <p>Brevemente</p>
+        <h3 class="h">Calculadora de equações do IIIº grau</h3><p class="conteudo">
+          Ao clicar aqui, você vai para o nossa Calculadora de equações do IIIº grau, onde podes resolver as equações achando as suas raizes (x1,x2,x3).
+        </p>
+        <button onclick="be()" type="submit">Entrar</button>
       </article>
     </nav>
     <br>
-    <h2>Video Aulas recomendadas</h2>
+    <h3>Video Aulas recomendadas</h3>
     <nav class="sis">
       <article action="https://facebook.com" class="forma" target="_blank ">
         <h3 class="h">Lógica de Programação em visual  (Algoritmos)</h3>
@@ -111,7 +124,8 @@
         </p>
         <button type="submit">Entrar</button>
       </article>
-            <article class="forma" target="_blank " action="Aulas_PHP">
+      <br>
+       <article class="forma" target="_blank " action="Aulas_MySQL">
         <h3 class="h">Aulas de MySQL</h3>
         <p class="conteudo">
           Aqui você encontrará video aulas sobre as linguagens de MySQL dividido em módulos bem organizados, onde o Gustavo Guanabara é o professor e você vera apartir do youtube indo logo na primeira aula.
@@ -167,6 +181,9 @@
   function ba() {
     alert("Indisponível no momento")
   }
+    function be() {
+    alert("Brevemente")
+  }
   function f() {
     alert("Para entrares em Contacto connosco basta enviares uma mensagens a um dos nossos canais referidos na secção de sites na pagina principal")
   }
@@ -176,8 +193,8 @@
   setInterval(()=> {
     let data = new Date();
     hrs.innerHTML = (data.getHours() < 10 ? "0": "") + data.getHours();
-    min.innerHTML = (data.getMinutes() < 10 ? "0": "") + data.getMinutes();
-    sec.innerHTML = (data.getSeconds() < 10 ? "0": "") + data.getSeconds();
+   min.innerHTML = (data.getMinutes() < 10 ? "0": "") + data.getMinutes();
+sec.innerHTML = (data.getSeconds() < 10 ? "0": "") + data.getSeconds();
   }, 1000);
   function fecharVideo() {
     var video = document.getElementById('myVideo');
@@ -186,7 +203,6 @@
     video.style.display = 'none';
     document.querySelector('.video').style.display = 'none';
   }
-  alert("Certifique-se que o seu navegador esteja com o modo 'Site para computador' ou 'Computador' ligado para melhor usufruir do site.")
 </script>
 </body>
-  </html>
+</html>
