@@ -7,7 +7,7 @@
     background-color: #d9d9e4;
     }
     header {
-    background-image: url('Form2.png');
+    background-image: url('imagens/Form2.png');
     color: #fff;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@
     text-align:center;
     }
     .section {
-    background-image: url('Form2.png');
+    background-image: url('imagens/Form2.png');
     color: #fff;
     padding: 20px;
     width: 80%;
@@ -47,8 +47,6 @@
     padding: 20px;
     margin-right:10px;
     width:30%;
-    min-width:200px;
-    max-height:300px;
     border: solid ;
     border-radius: 10px;
     border-color:#060728;
@@ -64,14 +62,14 @@
     width:70%;
     }
     footer {
-    background-image: url('Form.png');
+    background-image: url('imagens/Form.png');
         color: #fff;
     text-align: center;
     width: 100%;
     font-family:Sans-Serif;
     }
     .p {
-    background-image: url('Form2.png');
+    background-image: url('imagens/Form2.png');
         width: 100%;
     line-height: 20px;
     font-family:Times New Roman;
@@ -101,7 +99,7 @@
     width: 49%;
     height: 40px;
     color: white;
-    background-image: url('Form2.png');
+    background-image: url('imagens/Form2.png');
     margin: auto;
     font-family: Times New Roman, ;
     border:none
@@ -111,7 +109,7 @@
     width: 49%;
     height: 40px;
     color: white;
-    background-image: url('Form2.png');
+    background-image: url('imagens/Form2.png');
         margin: auto;
     font-family: Times New Roman;
     border:none;
@@ -125,7 +123,7 @@
     width: 70%;
     height: 40px;
     color: white;
-    background-image: url('Form2.png');
+    background-image: url('imagens/Form2.png');
     margin: auto;
     border-radius:5px;
     text-align: center;
@@ -135,7 +133,7 @@
     width: 32%;
     height: 40px;
     color: white;
-    background-image: url('Form2.png');
+    background-image: url('imagens/Form2.png');
     margin: auto;
     border-image:white;
     text-align: center;
@@ -151,7 +149,6 @@
     font-family: Times New Roman;
     text-align: center;
     margin-left:20px;
-    margin-top:20px;
     }
     ul {
     text-align: left;
@@ -176,7 +173,7 @@
     .ab{width:80px;
     height: 50px;
     color: white;
-    background-image: url('Form2.png');
+    background-image: url('imagens/Form2.png');
     margin: auto;
     border-radius:5px;
     text-align: center;
@@ -260,16 +257,22 @@
       margin-bottom:10px;
     }
     .AI{
-      width:20%;
-      height:52px;
+      width:100%;
+      height:35px;
+      border-radius:0px;
+      margin-bottom:0px;
     }
         .pergunta{
-      width:75%;
+      margin-bottom:0px;
+      width:100%;
       padding-bottom:0px;
       padding-top:0px;
       padding-left:10px;
-      height:50px;
+      height:40px;
+      border:none;
       font-size:16px;
+      border-radius:0px;
+      
     }
     .body{
     }
@@ -278,10 +281,9 @@
      bottom:0%;
      left:0%;
      right:0%;
-     height:55px;
     }
   .video {
-    position: relative;
+    position:relative;
     width:90%;
     padding-bottom: 56.25%; 
     overflow: hidden;
