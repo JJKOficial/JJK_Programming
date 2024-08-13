@@ -34,8 +34,33 @@
   <br>
   <br>
   <footer class="footer">
-    <input style="boder:nane" placeholder="Escreva sua pergunta aqui." class="pergunta" id="valor">
+    <input style="boder:nane" placeholder="Escreva sua pergunta aqui." class="pergunta" id="valor"><BR>
     <button class="AI" style="boder:nane" onclick="analizar()">Enviar</button>
+          <br>
+      <br>
+      <section>
+        <ul>
+          <li>
+            <f onclick="f()">Contacto</f>
+          </li>
+          <br>
+          <li>
+            <a class="link">Termos de utilização</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Objectivos do Site</a>
+          </li>
+          <br>
+          <li>
+            <a class="link">Política de privacidade</a>
+          </li>
+        </ul>
+      </section>
+    </p>
+    <br>
+    &copy; 2024 JJK_Programming.com <br>
+    Versão 2.1
   </footer>
   <script>
     function analizar() {
@@ -54,10 +79,24 @@
       if (p.includes("bom dia") || p.includes("boa tarde") || p.includes("ola") || p.includes("olá") || p.includes("oi")) {
         re.innerHTML = "Olá! em que posso ajudar?";
         document.getElementById("valor").value = "";
-      } else if (p.includes("como estas") || p.includes("como estás") || p.includes("como vais") || p.includes("como vai") || p.includes("como te sentes") || p.includes("tens estado") || p.includes("estas bem") || p.includes("estás bem") || p.includes("é como") || p.includes("e como")) {
-        re.innerHTML = "Bem, e você?";
+      } else if (p.includes("como estas") || p.includes("como estás") || p.includes("como vais") || p.includes("como vai") || p.includes("como te sentes") || p.includes("tens estado") || p.includes("estas bem") || p.includes("estás bem") || p.includes("é como")) {
+        re.innerHTML = "Estou bem, obrigado por perguntar, e como você esta.";
         document.getElementById("valor").value = "";
-      } else if (p.includes("tens") || p.includes("teus") || p.includes("teu") || p.includes("seu") || p.includes("seus") && p.includes("sentimento") || p.includes("sentimentos")) {
+      } else if (p.includes("são") && p.includes("que") && (p.includes("minuto") || p.includes("segundo")||p.includes("hora") )){
+        let hoje= new Date();
+        let horas= hoje.getHours().toString().padStart(2,'0');
+        let minutos= hoje.getMinutes().toString().padStart(2,'0');
+        re.innerHTML="ja são "+horas+" : "+minutos;
+        document.getElementById("valor").value = "";
+      }else if ((p.includes("qual")  || p.includes("que"))&&( (p.includes("data de") && p.includes("hoje"))||p.includes("dia") )){
+        let hoje= new Date();
+        let ano= hoje.getFullYear();
+        let mes= hoje.getMonth().toString().padStart(2,'0');
+        let dia= hoje.getSeconds().toString().padStart(2,'0');
+        re.innerHTML=" Hoje são: "+dia+" / "+mes+" / "+ano;
+        document.getElementById("valor").value = "";
+      }
+      else if (p.includes("tens") || p.includes("teus") || p.includes("teu") || p.includes("seu")|| p.includes("sentes") || p.includes("ficas")|| p.includes("ficaste")|| p.includes("seus") && (p.includes("sentimento") || p.includes("sentimentos")|| p.includes("nervoso")|| p.includes("raiva")|| p.includes("amor")|| p.includes("pena")|| p.includes("dor"))) {
         re.innerHTML = "Sou uma Inteligência Artificial po isso não tenho sentimentos, fui criado simplesmente para ajudar os usuarios do JJK_Programming.";
         document.getElementById("valor").value = "";
       } else if (p.includes("esta bem") || p.includes("está bem") || p.includes("ok")) {
@@ -87,7 +126,7 @@
       } else if (p.includes("quando te criaram") || p.includes("quando te criou") || p.includes("quando foste criado") || p.includes("que te criaram") || p.includes("é que te criou") || p.includes("foste criado")) {
         re.innerHTML = "Fui criado no ano de 2024 num dispositivo movel ";
         document.getElementById("valor").value = "";
-      } else if (p.includes("jjkprogramming") || p.includes("jjk_programming") || p.includes("objectivos") || p.includes("objetivos") || p.includes("objectivo") || p.includes("objetivo") || p.includes("serve o")) {
+      } else if (p.includes("jjkprogramming") || p.includes("jjk_programming") || p.includes("objectivos") || p.includes("objetivos") || p.includes("objectivo") || p.includes("objetivo") || p.includes("serve o") || p.includes("fala") &&( p.includes("site"))) {
         re.innerHTML = "O JJK_Programming ('JJK programando' ou também 'programando com JJK') é um sistema criado para oferecer suporte e recursos para informáticos que desejam aprender e aprimorar suas habilidades e não só.";
         document.getElementById("valor").value = "";
       } else if (p.includes("simbolo") || p.includes("a marca") || p.includes("repesentado") || p.includes("favicon") || p.includes("representada") || p.includes("infinito") || p.includes("logotipo") || p.includes("logo")) {
@@ -105,8 +144,8 @@
       } else if (p.includes("onde estas") || p.includes("onde estás") || p.includes("aonde estás") || p.includes("aonde estas") || p.includes("aonde te situas")) {
         re.innerHTML = "Como uma Inteligência Artificial limitada, me localizo no servidor onde o site se hospeda.";
         document.getElementById("valor").value = "";
-      } else if (p.includes("aplicativo") || p.includes("apps") || p.includes("app") || p.includes("aplicativos")) {
-        re.innerHTML = "Os aplicativos do JJK_Programming ainda não estão disponiveis, pois estão em desenvolvimento.";
+      } else if (p.includes("aplicativo") || p.includes("apps") || p.includes("app") || p.includes("aplicativos")&&( p.includes("JJK_programming")||p.includes("JJKprogramming")|| p.includes("site"))){
+        re.innerHTML = "O aplicativo do JJK_Programming ainda não estão disponivel, pois está em desenvolvimento.";
         document.getElementById("valor").value = "";
       } else if (p.includes("página principal") || p.includes("pagina principal") || p.includes("página inicial") || p.includes("pagina inicial") || p.includes("aulas") || p.includes("sistema") || p.includes("secções") || p.includes("seccão")) {
         re.innerHTML = "A pagina principal do JJK_Programming onde você vai encontrar varias secções como: os sistemas do JJK_Programming, isto e, sistemas exclusivos e disponibilizado pelo JJK_Programming (vais encontrar o sistema de conversão, calculadora de equação, resto da divisão...), as aulas disponiveis no youTube recomendadas no JJK_Programming (aulas de HTML e CSS, Javascript(JS) e PHP) e os canais e grupos do site na seccão siga-nos.";
